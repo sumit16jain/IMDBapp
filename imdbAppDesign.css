@@ -1,0 +1,166 @@
+
+body{
+	font-size:19px;
+	background-color: #dae1e8;
+	font-family: 'Comfortaa', cursive;
+}
+
+.heading{
+	width:100%;
+	padding-top:120px;
+	height: auto;	
+}
+
+.small-head{
+	margin-top:-50px;
+	font-size:2em;
+}
+.mp-title{
+	color:black;
+	border-radius: 5px;
+}
+.search-by{
+	background-color: #e63d00;
+}
+.mp-tabs{
+	background-color: #000000;
+}
+.mp-click{
+	background-color: white;
+	color:black;
+}
+.radyo{
+	padding:0;
+	border:0;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	text-decoration: none;
+	color:white;
+};
+.nav > li > a:hover{
+	color:black;
+	text-decoration:none;
+	background-color: white;
+}
+
+.search-button{
+	background-color: #e63d00;
+	color:black;
+}
+
+.small-click{
+	background-color: #00c3d9;
+	color:black;
+}
+
+.search-icon > a:hover{
+	color:black;
+	text-decoration: none;
+	background-color: #00c3d9;
+}
+
+.search-button:hover{
+	color:white;
+	text-decoration: none;
+	background-color: #0d2439;
+}
+.search-main > a:hover{
+	text-decoration: none;
+	background-color:white;
+	color:black;
+}
+.click{
+	background-color:#c9641d;
+	color:black;
+}
+
+/*Page-Two*/
+.head{
+	margin-top:100px;
+	height:auto;
+	background-color:#e63d00;
+	color:white;
+}
+
+.conf-img{
+	margin-top:-80px;
+	border:2px solid black;
+	background-color: white
+}
+
+.conf-img-one{
+	border:3px solid black;
+	background-color: white
+}
+
+.body{
+	height:auto;
+}
+
+
+.brdr{
+	border:2px solid #5FC9F3;
+}
+.brdr-large{
+	
+	border-bottom:2px solid #00c3d9;
+}
+
+.b{
+	background-color: #000000;
+	color:white;
+}
+
+
+.small-body{
+	margin-top:-2px;
+}
+
+.navigation{
+	background-color:#000000;
+	color:white;
+}
+.w{
+	background-color: white;
+}
+
+.CP{
+	display:none;
+}
+.error{
+	display: none;
+}
+.time-out{
+	display:none;
+}
+
+.err{
+	background-color:white;
+	margin-top:100px;
+	height:auto;
+}
+.err-img{
+	margin-top:30px;
+	opacity: 0.2;
+	filter: grayscale(100%);
+}
+.main-title:hover{
+	background-color: white;
+	color: #081F37;
+}
+.timed{
+	opacity: 0.2;
+	filter: grayscale(100%);
+	margin-top:200px;
+}
+.n{
+	background-color: #00c1d6;
+}
+.note > a:hover{
+	background-color: #162c3c;
+	color:white;
+}

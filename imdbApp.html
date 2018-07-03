@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+		
+		<link rel="stylesheet" href="imdbAppResp.css">
+		<link rel="stylesheet" href="imdbAppDesign.css">
+		<title>
+			IMDB - Movie
+		</title>
+			
+	</head>
+	<body>
+
+		<!-- Loader -->
+		<div class="container d-flex justify-content-center">
+			<div class="loader"></div>	
+	
+		</div>
+		
+
+
+		<!-- Start of Main Page -->
+		<div class="heading container mb-5">
+			<div class="p-3 d-flex justify-content-center">
+				<h1  class="display-4 font-weight-bold mp-title p-3 d-none d-md-block">iMDB</h1>
+				<span  class="font-weight-bold mp-title p-3 d-block d-md-none small-head">iMDB</span>
+			</div>
+			<div class="pt-1 container">
+				<div class="row text-center">
+					
+					<div class="col-12 d-block d-md-none d-flex align-items-center justify-content-center search-by ">
+						<p class="m-0 p-2">Search by : </p>
+					</div>
+
+					<div class="col-md-3  d-flex align-items-center justify-content-center search-by">
+						<p class="m-0 d-none d-md-block">Search by : </p>
+					</div>
+
+					
+
+					<div class="col-12 col-md-9 p-0 mp-tabs">
+						<ul class="nav nav-pills nav-fill d-flex justify-content-center pr-0" role="tablist">
+					  		<li class="nav-item search-main">
+					    		<a id="T" href="#title" class="d-flex justify-content-center align-items-center" role="tab" data-toggle="tab">
+					    			<p class="text-truncate mb-0 p-3">Title</p>
+					    		</a>
+					  		</li>
+					  		<li class="nav-item search-main">
+					    		<a id="Y" href="#year" class="d-flex justify-content-center align-items-center" role="tab" data-toggle="tab">
+					    			<p class="text-truncate mb-0 p-3">Title 'n' Year</p>
+					    		</a>
+					  		</li>
+					  		<li class="nav-item search-main">
+					    		<a id="I" href="#id"  class="d-flex justify-content-center align-items-center" role="tab" data-toggle="tab">
+					    			<p class="text-truncate mb-0 p-3">Id</p>
+					    		</a>
+					  		</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- For Title -->
+			<div role="tabpanel" class="tab-pane active" id="title">
+
+				<div class="search pt-4 container">
+						
+					<div class="row">
+
+						<div class="col-sm-10 p-0 mb-3">
+							<input type="text" class="form-control p-2" name="search1" placeholder="Movie Title...." id="search1" required /> 
+						</div>
+						<div class="col-sm-2 p-0">
+							<a href="#" id="search-title" class="d-flex  search-button p-2 justify-content-center align-items-center ">Search</a>
+						</div>
+
+					</div>
+						
+				</div>
+			</div>
+
+			<!-- For Title 'n' Year -->
+			<div role="tabpanel" class="tab-pane active" id="year">
+				<div class="search pt-3">
+					<div class="row ">
+						<div class="col-md-9 p-0">
+							
+							<div class="row p-3">
+								<div class="col-md-6 mb-1">
+									<input type="text" class="form-control" placeholder="Title" name="search2-one" id="search2-one">		
+								</div>
+
+								<div class="col-md-6">
+									<input type="text" class="form-control" placeholder="Year" name="search2-two" id="search2-two">		
+								</div>	
+							</div>
+							
+	      						
+						</div>
+						
+						<div class="col-md-3 pt-3">
+							<a href="#" id="search-year" class="p-2 search-button d-flex justify-content-center align-items-center">Search</a> 
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- For Id -->
+			<div role="tabpanel" class="tab-pane active" id="id">
+				<div class="search pt-4 container">
+					<div class="row">
+						<div class="col-sm-10 p-0 mb-3">
+							<input type="text" class="form-control p-2" name="search3" placeholder="Enter Imdb Id..." id="search3" required /> 
+						</div>
+						<div class="col-sm-2 p-0">
+							<a href="#" id="search-id" class="d-flex justify-content-center align-items-center search-button p-2 ">Search</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Main Page -->
+
+
+
+
+
+
+
+
+
+
+		<!-- Start of Content Page -->
+		<div class="CP">
+			<div class="container navigation d-flex justify-content-start fixed-top">
+				<a href="#" class="main-title"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
+			</div>
+
+			<!-- Start of Head -->
+			<div class="container head p-4">
+
+				<div class="mb-2 d-block d-md-none d-lg-none d-flex justify-content-center">
+					<div class="row">
+						<div class="col-12">
+							<img src="" class="p-2 img-details conf-img-one"width="160" height="180" alt="Poster"  onerror="this.src='images/dummy.jpg'";>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Start of Main-One for md, lg and xl devices -->
+				<div class="container d-none d-md-block brdr-large pb-2">	
+					<!-- Start of Title and Rating -->
+					<div class="row mb-2">
+						<div class="col-md-8 p-2 col-lg-9 col-xl-10 d-flex justify-content-start ">
+							<h1 class="m-0 p-1 text-truncate"><span class="Title "></span><br>(<span class="small movie"></span>)</h1>			
+						</div>
+						<div class="col-md-4 p-2 col-lg-3 col-xl-2 d-flex justify-content-start align-items-start">
+							<p class="d-none border border-light d-md-block p-2 "><span class="rated"></span></p>
+						</div>
+					</div>
+					
+					<!-- Start of Release Dates and Languages -->
+					<div class="row mb-2">
+						<div class="col-md-4 col-lg-2 d-flex justify-content-start align-items-center">
+							<p class="m-0 d-none d-md-block"><i class="fa fa-calendar"></i> <b><span class="released"></span></b></p>	
+						</div>
+						<div class="col-md-8 col-lg-10 d-flex justify-content-start align-items-center">
+							<p class="m-0 d-none d-md-block p-1 pl-4 border border-white border-top-0 border-right-0 border-bottom-0"><span class="languages"></span></p>
+						</div>
+					</div>
+					
+					<!-- Start of Runtime and Genre -->
+					<div class="row">
+						<div class="col-md-4 col-lg-2 d-flex justify-content-start">
+							<p class="m-0"><i class="fa fa-clock-o"></i> <b><span class="runtime"></span></b></p>		
+						</div>
+						<div class="col-md-8 col-lg-10 d-flex justify-content-start align-items-center">
+							<p class="m-0  p-1 border border-white border-top-0 border-right-0 border-bottom-0 pl-4"><span class="genre"></span></p>
+						</div>
+					</div>
+				</div>
+				<!-- End of Main-One for md, lg and xl devices -->
+
+				<!-- Start of Main-One for sm and mobile devices -->
+				<div class="container d-block d-md-none brdr-large pb-2">	
+					<!-- Start of Title and Rating -->
+					<div class="row ">
+						<div class="col-12 mb-1 d-flex justify-content-center">
+							<h2 class="m-0 b p-1 lead text-truncate"><span class="Title"></span><br><span class="d-flex justify-content-center">(<span class="small movie"></span>)</span></h2>		
+						</div>
+						<div class="col-12 d-flex justify-content-center align-items-end">
+							<p class="m-0 d-block b d-md-none p-1"><span class="rated"></span></p>
+						</div>
+					</div>
+					
+					<!-- Start of Release Dates and Languages -->
+					<div class="row">
+						<div class="col-12 d-flex justify-content-center align-items-center">		
+							<p class="m-0 p-1 d-block d-md-none"><i class="fa fa-calendar"></i> <b><span class="released"></span></b></p>		
+						</div>
+						<div class="col-12 col-lg-10 d-flex justify-content-center align-items-center">
+							<p class="m-0 p-1 d-block d-md-none"> <span class="languages"></span></p>
+						</div>
+					</div>
+					
+					<!-- Start of Runtime and Genre -->
+					<div class="row d-flex justify-content-center">
+						<div class="col-12 d-flex justify-content-center align-items-center">
+							<p class="m-0 p-1"><i class="fa fa-clock-o"></i> <b><span class="runtime"></span></b></p>		
+						</div>
+						<div class="col-12 d-flex justify-content-center align-items-center">
+							<p class="m-0 p-1"><span class="genre"></span></p>
+						</div>
+					</div>
+				</div>
+				<!-- End of Main-One for sm and mobile devices -->
+
+				<!-- Start of Main-Two -->
+				<div class="container">
+
+					<div class="row">
+						<!-- Empty space -->
+						<div class="col-0 col-md-4">
+							<!-- border border-light  border-top-0 border-bottom-0 -->
+						</div>
+
+						<!-- Start of Ratings -->
+						<div class="col-12 col-md-8">
+
+							<!-- Start of Rating -->
+							<div class="row pt-3 d-flex justify-content-center" id="j-rate">
+								
+								
+							</div>
+							<!-- End of Rating -->
+						</div>
+						<!-- End of Ratings -->
+					</div>			
+				</div>
+				<!-- End of Main-Two -->
+			</div>
+			<!-- End of Head -->
+
+
+
+			<!-- Start of Body -->
+			<div class="container mb-4 w">
+
+				<!-- Start of Body Contents -->
+				<div class="row">
+					<!-- Image -->
+					<div class="col-md-4 d-flex justify-content-center d-none d-md-block">
+						<img src="" class="ml-2 p-2 img-details conf-img d-none d-md-block d-lg-none" width="200" height="250" alt="Poster" onerror="this.src='images/dummy.jpg'";>	
+
+						<img src="" class="ml-4 p-2 img-details conf-img d-none d-md-none d-lg-block" width="250" height="300" alt="Poster" onerror="this.src='images/dummy.jpg'";>			
+					</div>
+
+					<!-- Start of Body-details -->
+					<div class="col-md-8 border border-dark body">
+						<!-- Start of Tabs -->
+						<div class="d-none d-md-block">
+							<div class="row b border border-dark border-top-0 border-left-0 border-right-0">
+								
+								<!-- Tab-One -->
+								<div class="col-4 col-md-4 p-0">
+									<a href="#cns" id="c-one" class="p-2 d-flex justify-content-center align-items-center">Casting Details</a>
+
+								</div>
+
+								<!-- Tab-Two -->
+								<div class="col-4 col-md-4 border border-dark border-top-0 border-bottom-0 p-0 ">
+									<a href="#im" id="i-one" class="p-2 d-flex justify-content-center align-items-center">IMDB Details</a>
+								</div>
+								
+								<!-- Tab-Three -->
+								<div class="col-4 col-md-4 p-0">
+									<a href="#more" id="m-one" class="p-2 d-flex justify-content-center align-items-center">More...</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Tabs for small and medium devices -->
+						<div class="d-block d-md-none small-body">
+							<div class="row border border-dark border-top-0 border-left-0 border-right-0">
+								
+								<!-- Tab-One -->
+								<div class="col-4 p-0 search-icon b">
+									<a href="#cns" id="c-two" class="p-2 d-flex justify-content-center align-items-center "><i class="fa fa-film"></i></a>
+
+								</div>
+
+								<!-- Tab-Two -->
+								<div class="col-4 border border-dark border-top-0 border-bottom-0 p-0 search-icon b">
+									<a href="#im" id="i-two" class="p-2  d-flex justify-content-center align-items-center "><i class="fa fa-info"></i></a>
+								</div>
+								
+								<!-- Tab-Three -->
+								<div class="col-4 p-0 search-icon b">
+									<a href="#more" id="m-two" class="p-2  d-flex justify-content-center align-items-center "><i class="fa fa-ellipsis-h"></i></a>
+								</div>
+							</div>
+						</div>
+						<!-- End of Tabs -->
+
+
+						<!-- Start of Tab-One Content -->
+						<div id="cns">
+							<div class="row">
+								<div class="col-3">
+									<p class="mb-0 p-2 font-weight-bold">Plot: </p>
+								</div>
+								<div class="col-9">
+									<p class="mb-0 p-2"><span class="plot"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<p class="mb-0 p-2 font-weight-bold">Actors: </p>
+								</div>
+								<div class="col-9">
+									<p class="mb-0 p-2"><span class="actors"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<p class="mb-0 p-2 font-weight-bold">Director:</p>
+								</div>
+								<div class="col-9">
+									<p class="mb-0 p-2"><span class="director"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<p class="mb-0 p-2 font-weight-bold">Writer: </p>
+								</div>
+								<div class="col-9">
+									<p class="mb-0 p-2"><span class="writer"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<p class="mb-0 p-2 font-weight-bold">Year: </p>
+								</div>
+								<div class="col-9">
+									<p class="mb-0 p-2"><span class="year"></span></p>
+								</div>
+							</div>
+						</div>
+						<!-- End of Tab-One Content -->
+		
+						<!-- Start of Tab-Two Content -->
+						<div id="im">
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">Imdb Id: </p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="iid"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">Imdb Rating: </p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="imdb-rating"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">Imdb Votes:</p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="imdb-votes"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">MetaScore: </p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="metascore"></span></p>
+								</div>
+							</div>
+						</div>
+						<!-- End of Tab-Two Content -->
+
+						<!-- Start of Tab-Three Content -->
+						<div id="more">
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">Country: </p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="country"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<p class="mb-0 p-2 font-weight-bold">Awards: </p>
+								</div>
+								<div class="col-8">
+									<p class="mb-0 p-2"><span class="awards"></span></p>
+								</div>
+							</div>
+							<div id="mve">
+								
+							</div>
+						</div>
+						<!-- End of Tab-Three Content -->
+
+					</div>
+					<!-- End of Body-Details -->
+				</div>
+				<!-- End of Body-Contents -->
+			</div>	
+			<!-- End of Body -->
+		</div>	
+		<!-- End of Content Page -->
+
+		<!-- Error Page -->
+		<div class="error container">
+			<div class="container navigation d-flex justify-content-start fixed-top">
+				<a href="#" class="main-title"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
+			</div>
+			<div class="container p-0 err">
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center">
+						<img src="images/reel.jpg" class="err-img d-none d-md-block" alt="NO-Movie" width="250" height="250">
+
+						<img src="images/reel.jpg" class="err-img d-block d-md-none" alt="NO-Movie" width="150" height="150">
+					</div>
+					<div class="col-12 d-flex justify-content-center mt-3">
+						<h1 class="pt-md-4 text-secondary d-none d-md-block">Movie not Found in iMDB records</h1>
+						<p class="pt-2 text-secondary d-block d-md-none">Movie not Found in iMDB records</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- TimeOut -->
+		<div class="time-out container">
+			<div class="container navigation d-flex justify-content-start fixed-top">
+				<a href="#" class="main-title"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
+			</div>
+			<div class="container p-0 err">
+				<div class="row">
+					<div class="col-lg-12 d-flex justify-content-center">
+						<img src="images/aww.jpg" class="err-img d-none d-md-block" alt="NO-Movie" width="250" height="250">
+
+						<img src="images/aww.jpg" class="err-img d-block d-md-none" alt="NO-Movie" width="200" height="200">
+					</div>
+					<div class="col-12 d-flex justify-content-center mt-2 ">
+						<h1 class="pt-md-4 text-secondary d-none d-md-block">Request Timed Out</h1>
+
+						<h1 class="pt-2 text-secondary d-block d-md-none">Request Timed Out</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+		<script src="imdbApp.js"></script>	
+	</body>
+
+</html> 
